@@ -75,10 +75,10 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))
 ])
 
-train_dataset = SignLanguageDataset(root_dir='~/Desktop/sign_language_translation/data/train', transform=transform)
+train_dataset = SignLanguageDataset(root_dir='/home/msa/Desktop/sign_language_translation/data/train', transform=transform)
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
-val_dataset = SignLanguageDataset(root_dir='~/Desktop/sign_language_translation/data/test', transform=transform)
+val_dataset = SignLanguageDataset(root_dir='/home/msa/Desktop/sign_language_translation/data/test', transform=transform)
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
 model = Net()

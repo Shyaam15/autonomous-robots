@@ -1,0 +1,6 @@
+<launch>
+    <node name="gesture_recognition_node" pkg="sign_language_translation" type="gesture_recognition_node.py" output="screen">
+        <param name="camera_topic" value="/camera/image_raw"/>
+    </node>
+</launch>
+

@@ -21,6 +21,8 @@ class SignLanguageDataset(Dataset):
             for img_name in os.listdir(cls_path):
                 self.images.append(os.path.join(cls_path, img_name))
                 self.labels.append(i)
+        
+        print(self.classes)
 
     def __len__(self):
         return len(self.images)
@@ -84,7 +86,7 @@ val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 model = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
-num_epochs = 20
+num_epochs = 5
 
 for epoch in range(num_epochs):
     model.train()

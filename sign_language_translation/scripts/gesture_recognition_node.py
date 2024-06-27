@@ -6,6 +6,7 @@ import cv2
 import torch
 import numpy as np
 import sys
+import time
 
 sys.path.append('/home/msa/catkin_ws/src/sign_language_translation/models')
 # print(sys.path)
@@ -52,6 +53,7 @@ class SignLanguageTranslator:
             if gesture:
                 self.sign_pub.publish(gesture)
                 print(gesture)
+                time.sleep(0.5)
             
             # Check for 'q' key press to exit
             if cv2.waitKey(1) & 0xFF == ord('q'):

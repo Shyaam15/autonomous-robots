@@ -47,12 +47,12 @@ class SignLanguageTranslator:
             
             # Process the image and recognize gestures
             gesture = self.recognize_gesture(frame)
+            rospy.sleep(0.5)
             
             # Publish the recognized gesture
             if gesture:
                 self.sign_pub.publish(gesture)
                 print(gesture)
-                rospy.sleep(0.5)
             
             # Check for 'q' key press to exit
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -89,4 +89,3 @@ if __name__ == '__main__':
     finally:
         translator.cap.release()
         cv2.destroyAllWindows()
-

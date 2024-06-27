@@ -23,9 +23,8 @@ class SignLanguageTranslator:
         self.model = Net()
         self.model.load_state_dict(torch.load('/home/msa/catkin_ws/src/sign_language_translation/trained_model/model_trained.pt'))
         self.model.eval()
-        
         # Dictionary to map output labels to sign language gestures
-        self.signs = {'0': 'for', '1': 'goodluck', '2': 'hello', '3': 'iloveyou', '4': 'need', '5': 'no', '6': 'please', '7': 'sorry', '8': 'thanks', '9': 'yes'}
+        self.signs = {'0': 'okay', '1': 'hello', '2': 'stop', '3': 'yes', '4': 'pray', '5': 'no', '6': 'sorry', '7': 'iloveyou', '8': 'goodluck', '9': 'thanks'}
         
         # Initialize the camera
         self.cap = cv2.VideoCapture(0)

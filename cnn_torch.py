@@ -86,7 +86,7 @@ val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 model = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
-num_epochs = 5
+num_epochs = 3
 
 for epoch in range(num_epochs):
     model.train()

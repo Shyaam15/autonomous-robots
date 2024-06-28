@@ -12,16 +12,19 @@ git clone https://github.com/Shyaam15/autonomous-robots.git
 ## 4. Delete unnecessary files
 rm README.md camera.py cnn_torch.py file_splitter.py modules_dependencies_installations.sh
 
-## 5. Traverse to catkin_ws folder
+## 5. Turn the nodes executable
+chmod +x ~/catkin_ws/src/sign_language_translation/scripts/*
+
+## 6. Traverse to catkin_ws folder
 cd ~/catkin_ws
 
-## 6. Catkin_make to update the catkin workspace
+## 7. Catkin_make to update the catkin workspace
 catkin_make\
 source devel/setup.bash
 
-## 7. roscore to start the ros environment
+## 8. roscore to start the ros environment
 roscore
 
-## 8. Launch the nodes in two new terminals
+## 9. Launch the nodes in two new terminals
 roslaunch sign_language_translation gesture_recognition.launch\
 roslaunch sign_language_translation speech_recognition.launch

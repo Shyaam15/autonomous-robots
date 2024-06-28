@@ -33,6 +33,6 @@ source devel/setup.bash
 ## 9. roscore to start the ros environment
 roscore
 
-## 10. Launch the nodes in two new terminals
+## 10. Launch the nodes in two new terminals simultaneously or one after the other
 roslaunch sign_language_translation gesture_recognition.launch \
 roslaunch sign_language_translation speech_recognition.launch

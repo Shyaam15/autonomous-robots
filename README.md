@@ -15,5 +15,9 @@ cd ~/catkin_ws
 ## 5. Catkin_make to update the catkin workspace
 catkin_make
 
-## 6. Launch the nodes
-roslaunch sign_language_translation translation.launch
+## 6. roscore to start the ros environment
+roscore
+
+## 7. Launch the nodes in two new terminals
+roslaunch sign_language_translation gesture_recognition.launch
+roslaunch sign_language_translation speech_recognition.launch

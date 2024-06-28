@@ -1,3 +1,4 @@
 <launch>
   <node name="sign_language_translator" pkg="sign_language_translation" type="gesture_recognition_node.py" output="screen"/>
+  <node name="speech_recognition_node" pkg="sign_language_translation" type="speech_recognition_node.py" output="screen" />
 </launch>

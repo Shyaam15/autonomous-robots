@@ -1,7 +1,10 @@
 # autonomous-robots
 
-## 1. traverse tk catkin_ws folder 
+## 1. traverse to catkin_ws folder 
 cd ~/catkin_ws/src
 
 ## 2. clone the repo
 git clone https://github.com/Shyaam15/autonomous-robots.git
+
+## 3. Install the dependencies and required modules
+./modules_dependencies_installations.sh

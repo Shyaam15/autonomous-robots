@@ -7,7 +7,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/Shyaam15/autonomous-robots.git
 
 ## 3. Rename the repo and go inside the folder
-mv autonomous-robots sign_language_translation
+mv autonomous-robots sign_language_translation\
 cd sign_language_translation
 
 ## 4. Install the dependencies and required modules

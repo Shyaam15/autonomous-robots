@@ -1,0 +1,3 @@
+<launch>
+  <node name="speech_recognition_node" pkg="sign_language_translation" type="speech_recognition_node.py" output="screen" />
+</launch>

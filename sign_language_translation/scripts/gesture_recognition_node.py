@@ -6,8 +6,11 @@ import cv2
 import torch
 import numpy as np
 import sys
+import os
 
-sys.path.append('/home/msa/catkin_ws/src/sign_language_translation/models')
+cwd = os.getcwd()
+# print(cwd+'/../catkin_ws/src/sign_language_translation/models')
+sys.path.append(cwd+'/../catkin_ws/src/sign_language_translation/models')
 # print(sys.path)
 from model import Net
 
@@ -21,7 +24,7 @@ class SignLanguageTranslator:
         
         # Load the trained model
         self.model = Net()
-        self.model.load_state_dict(torch.load('/home/msa/catkin_ws/src/sign_language_translation/trained_model/model_trained.pt'))
+        self.model.load_state_dict(torch.load(cwd+'/../catkin_ws/src/sign_language_translation/trained_model/model_trained.pt'))
         self.model.eval()
         # Dictionary to map output labels to sign language gestures
         self.signs = {'0': 'okay', '1': 'hello', '2': 'stop', '3': 'yes', '4': 'pray', '5': 'no', '6': 'sorry', '7': 'iloveyou', '8': 'goodluck', '9': 'thanks'}

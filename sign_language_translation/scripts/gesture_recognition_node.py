@@ -19,6 +19,14 @@ class SignLanguageTranslator:
         # Publisher for recognized gestures
         self.sign_pub = rospy.Publisher("/sign_language/gesture", String, queue_size=10)
         
+        # Subscriber for recognized speech
+        self.speech_sub = rospy.Subscriber('recognized_speech', String, self.speech_callback)
+	
+	# Recognized speech
+        self.trigger_flag = False
+        self.full_sentence = ''
+        self.text_suggestion = ''
+        
         # Load the trained model
         self.model = Net()
         self.model.load_state_dict(torch.load('/home/msa/catkin_ws/src/sign_language_translation/trained_model/model_trained.pt'))
@@ -79,6 +87,12 @@ class SignLanguageTranslator:
         gesture = self.signs.get(str(pred.item()))
         
         return gesture
+    
+    def speech_callback(self, msg):
+        rospy.loginfo("Received speech: %s", msg.data)
+        self.full_sentence += msg.data + ' '
+        rospy.loginfo("Full sentence: %s", self.full_sentence)
+        print(self.full_sentence)
 
 if __name__ == '__main__':
     try:

@@ -19,5 +19,5 @@ catkin_make
 roscore
 
 ## 7. Launch the nodes in two new terminals
-roslaunch sign_language_translation gesture_recognition.launch
+roslaunch sign_language_translation gesture_recognition.launch\
 roslaunch sign_language_translation speech_recognition.launch

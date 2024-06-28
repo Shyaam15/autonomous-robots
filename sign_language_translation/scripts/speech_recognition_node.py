@@ -21,6 +21,7 @@ if __name__ == "__main__":
                 recognized_text = recognizer.recognize_google(audio)
                 rospy.loginfo("You said: %s", recognized_text)
                 pub.publish(recognized_text)
+                print(recognized_text)
             except sr.UnknownValueError:
                 rospy.loginfo("Could not understand the audio")
             except sr.RequestError as e:

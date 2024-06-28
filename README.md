@@ -16,7 +16,8 @@ rm README.md camera.py cnn_torch.py file_splitter.py modules_dependencies_instal
 cd ~/catkin_ws
 
 ## 6. Catkin_make to update the catkin workspace
-catkin_make
+catkin_make\
+source devel/setup.bash
 
 ## 7. roscore to start the ros environment
 roscore
